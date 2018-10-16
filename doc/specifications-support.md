@@ -10,7 +10,8 @@ interface : FeedInterface
 | ---- | --- | ------ | ------ |
 | title | title | getTitle | setTitle |
 | link | link | getLink | setLink |
-| updated | pubDate / lastBuildDate | getLastModified | setLastModified |
+| updated | lastBuildDate | getLastModified | setLastModified |
+| published | pubDate | getPublished | setPublished |
 | id | N/A | getPublicId | setPublicId |
 | N/A | description | getDescription | setDescription |
 | category | category | getCategories | addCategory |

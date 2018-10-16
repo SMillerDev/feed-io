@@ -43,6 +43,11 @@ class Node implements NodeInterface, ElementsAwareInterface
     protected $lastModified;
 
     /**
+     * @var \DateTime
+     */
+    protected $published;
+
+    /**
      * @var string
      */
     protected $link;
@@ -185,6 +190,25 @@ class Node implements NodeInterface, ElementsAwareInterface
     public function setLastModified(\DateTime $lastModified = null) : NodeInterface
     {
         $this->lastModified = $lastModified;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getPublished() : ? \DateTime
+    {
+        return $this->published;
+    }
+
+    /**
+     * @param  \DateTime $published
+     * @return NodeInterface
+     */
+    public function setPublished(\DateTime $published = null) : NodeInterface
+    {
+        $this->published = $published;
 
         return $this;
     }

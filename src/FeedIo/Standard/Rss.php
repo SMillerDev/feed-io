@@ -19,6 +19,7 @@ use FeedIo\Rule\Link;
 use FeedIo\Rule\PublicId;
 use FeedIo\Rule\Media;
 use FeedIo\Rule\Category;
+use FeedIo\Rule\Published;
 use FeedIo\RuleSet;
 
 class Rss extends XmlAbstract
@@ -87,7 +88,8 @@ class Rss extends XmlAbstract
     public function buildFeedRuleSet() : RuleSet
     {
         $ruleSet = $this->buildBaseRuleSet();
-        $ruleSet->add(new Language());
+        $ruleSet->add(new Language())
+                ->add(new Published('published'));
 
         return $ruleSet;
     }

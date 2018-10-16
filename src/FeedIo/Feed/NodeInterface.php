@@ -80,6 +80,21 @@ interface NodeInterface
     public function setLastModified(\DateTime $lastModified = null) : NodeInterface;
 
     /**
+     * Returns the node's published date
+     *
+     * @return \DateTime
+     */
+    public function getPublished() : ? \DateTime;
+
+    /**
+     * Sets the node's published date
+     *
+     * @param  \DateTime $published
+     * @return NodeInterface
+     */
+    public function setPublished(\DateTime $published = null) : NodeInterface;
+
+    /**
      * Returns the node's link
      *
      * @return string

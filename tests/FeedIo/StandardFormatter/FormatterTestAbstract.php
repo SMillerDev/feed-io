@@ -41,6 +41,7 @@ abstract class FormatterTestAbstract extends TestCase
         $category->setLabel('sample');
         $category->setScheme('http://localhost');
         $date = new \DateTime('2014/12/01');
+        $pub  = new \DateTime('2014/11/01');
         $feed = new Feed();
         $feed->setTitle('sample title');
         $feed->setPublicId('http://localhost/item/1');
@@ -48,8 +49,9 @@ abstract class FormatterTestAbstract extends TestCase
         $feed->setLink('http://localhost');
         $feed->setDescription('a sample feed');
         $feed->setLanguage('en');
+        $feed->setPublished($pub);
         $feed->addCategory($category);
-        
+
         $item = new Item();
         $item->setPublicId('http://localhost/item/1');
         $item->setLastModified($date);
@@ -57,6 +59,7 @@ abstract class FormatterTestAbstract extends TestCase
         $item->setDescription('A great description');
         $item->setLink('http://localhost/item/1');
         $item->set('author', 'name@domain.tld');
+        $feed->setPublished($pub);
         $item->addCategory($category);
         $feed->add($item);
 

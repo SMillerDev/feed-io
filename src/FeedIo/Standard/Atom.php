@@ -18,6 +18,7 @@ use FeedIo\Rule\Description;
 use FeedIo\Rule\Language;
 use FeedIo\Rule\PublicId;
 use FeedIo\Rule\Atom\Category;
+use FeedIo\Rule\Published;
 use FeedIo\RuleSet;
 
 class Atom extends XmlAbstract
@@ -90,6 +91,7 @@ class Atom extends XmlAbstract
         $ruleSet = $this->buildFeedRuleSet();
         $ruleSet
             ->add(new Author())
+            ->add(new Published('published'))
             ->add(new Description('content'), ['summary']);
 
         return $ruleSet;
